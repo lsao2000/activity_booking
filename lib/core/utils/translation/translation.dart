@@ -1,0 +1,58 @@
+abstract class Translation {
+  static Map<String, Map<String, String>> get keys => {
+        'en_US': {
+          'welcome': 'Welcome to',
+          'get_started': 'Get Started',
+          'discover_and_book': 'Discover and book unique experiences',
+          'continue_as_client': 'Continue as Client',
+          'continue_as_admin': 'Continue as Admin',
+          'already_user': 'Already a user? ',
+          'login': 'Login',
+          // 'select_language': 'Select Language',
+          // 'next': 'Next',
+          // 'skip': 'Skip',
+          // 'done': 'Done',
+        },
+        'es_ES': {
+          'welcome': 'Bienvenido a',
+          'get_started': 'Comenzar',
+          'discover_and_book': 'Descubre y reserva experiencias únicas',
+          'continue_as_client': 'Continuar como Cliente',
+          'continue_as_admin': 'Continuar como Administrador',
+          'already_user': '¿Ya tienes una cuenta? ',
+          'login': 'Iniciar sesión',
+          // 'select_language': 'Seleccionar idioma',
+          // 'next': 'Siguiente',
+          // 'skip': 'Omitir',
+          // 'done': 'Hecho',
+        },
+        'fr_FR': {
+          'welcome': 'Bienvenue à',
+          'get_started': 'Commencer',
+          'discover_and_book': 'Découvrez et réservez des expériences uniques',
+          'continue_as_client': 'Continuer en tant que Client',
+          'continue_as_admin': "Continuer en tant qu' Administrateur",
+          'already_user': 'Déjà un utilisateur? ',
+          'login': 'Connexion',
+          // 'select_language': 'Choisir la langue',
+          // 'next': 'Suivant',
+          // 'skip': 'Passer',
+          // 'done': 'Terminé',
+        },
+        'ar_AR': {
+          'welcome': 'مرحبًا بك في',
+          'get_started': 'ابدأ',
+          'discover_and_book': 'اكتشف واحجز تجارب فريدة',
+          'continue_as_client': 'المتابعة كعميل',
+          'continue_as_admin': 'المتابعة كمسؤول',
+          'already_user': 'هل لديك حساب؟ ',
+          'login': 'تسجيل الدخول',
+
+          // 'select_language': 'اختر اللغة',
+          // 'next': 'التالي',
+          // 'skip': 'تخطي',
+          // 'done': 'تم',
+        },
+        // Add more languages here
+      };
+}
