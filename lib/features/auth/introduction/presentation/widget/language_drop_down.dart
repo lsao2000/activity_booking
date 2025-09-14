@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:get/instance_manager.dart';
 
 class LanguageDropdown extends StatefulWidget {
   const LanguageDropdown({super.key});
@@ -32,7 +30,6 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
         // The value of the currently selected item.
         value: _selectedValue,
 
-        // The list of items to display in the dropdown.
         items: _languages.map((String value) {
           return DropdownMenuItem<String>(
             value: value,
@@ -70,11 +67,21 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
           }
         },
 
-        // Decoration to style the dropdown to match your image.
         decoration: InputDecoration(
           // Adds a rounded border.
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(color: Colors.grey.shade300),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(color: Colors.grey.shade500),
+          ),
+          icon: Icon(Icons.language, color: Colors.grey),
+          hoverColor: Colors.grey.shade200,
+          focusColor: Colors.grey.shade200,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(8.0),
           ),
           // Adjusts the padding inside the dropdown.
           contentPadding:

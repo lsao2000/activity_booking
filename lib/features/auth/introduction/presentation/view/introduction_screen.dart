@@ -2,6 +2,7 @@ import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/features/auth/introduction/presentation/widget/language_drop_down.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -73,33 +74,45 @@ class IntroductionScreen extends StatelessWidget {
               SizedBox(
                 height: height * 0.05,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: deepOrange,
-                    padding: EdgeInsets.symmetric(
-                        horizontal: width * 0.1 , vertical: height * 0.02)),
-                onPressed: () {},
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Text(
-                    "continue_as_client".tr,
-                    style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.bold),
+              SizedBox(
+                width: Get.width * 0.9,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: deepOrange,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: width * 0.1, vertical: height * 0.02)),
+                  onPressed: () {},
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    child: Text(
+                      "continue_as_client".tr,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
               SizedBox(height: height * 0.02),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    // backgroundColor: deepOrange,
-                    backgroundColor: lightGrey,
-                    padding: EdgeInsets.symmetric(
-                        horizontal: width * 0.1, vertical: height * 0.02)),
-                onPressed: () {},
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Text(
-                    "continue_as_admin".tr,
-                    style: TextStyle(color: black, fontSize: 20,fontWeight: FontWeight.bold),
+              SizedBox(
+                width: Get.width * 0.9,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      // backgroundColor: deepOrange,
+                      backgroundColor: lightGrey,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: width * 0.1, vertical: height * 0.02)),
+                  onPressed: () {},
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    child: Text(
+                      "continue_as_admin".tr,
+                      style: TextStyle(
+                          color: black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
