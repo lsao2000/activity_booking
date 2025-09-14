@@ -1,3 +1,4 @@
+import 'package:activity_booking/core/utils/translation/language_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -46,20 +47,24 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
             case "English":
               Locale locale = Locale("en_us");
               Get.updateLocale(locale);
+              LanguagePreferences.setPreferredLanguage("en", "US");
               break;
             case "Spanish":
               Locale locale = Locale("es", "ES");
               Get.updateLocale(locale);
+              LanguagePreferences.setPreferredLanguage("es", "ES");
               debugPrint(Get.locale?.languageCode.toString());
               break;
             case "French":
               Locale locale = Locale("fr", "FR");
               Get.updateLocale(locale);
+              LanguagePreferences.setPreferredLanguage("fr", "FR");
               debugPrint(Get.locale?.languageCode.toString());
               break;
             case "Arabic":
               Locale locale = Locale("ar", "AR");
               Get.updateLocale(locale);
+              LanguagePreferences.setPreferredLanguage("ar", "AR");
               debugPrint(Get.locale?.languageCode.toString());
               break;
 

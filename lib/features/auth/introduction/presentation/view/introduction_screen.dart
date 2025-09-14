@@ -35,7 +35,8 @@ class IntroductionScreen extends StatelessWidget {
                       text: "Yalla! ",
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(
+                        color:
+                        Color.fromRGBO(
                           240,
                           90,
                           40,
@@ -136,8 +137,7 @@ class IntroductionScreen extends StatelessWidget {
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          debugPrint("Login tapped");
-                          // Handle login tap
+                          Get.toNamed('/sign_in');
                         },
                     ),
                   ],

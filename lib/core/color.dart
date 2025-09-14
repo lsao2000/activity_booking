@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
 
 Color grey = const Color(0xFF898988);
-// Color lightGrey = const Color(0xFFEDEDED);
-Color black =  Colors.black;
+Color black = Colors.black;
 Color white = Colors.white;
 
-
-
-
-Color lightGrey = const Color(0xFFF5F2F0);
+Color brandColor = const Color(0xFFF05A28);
 Color deepOrange = const Color(0xFFF28224);
-Color orange = Color.fromRGBO(
-  23,
-  20,
-  18,
-  1.0,
-);
-Color darkGray = Color.fromRGBO(
-  137,
-  137,
-  136,
-  1.0,
-);
+Color lightGrey = const Color(0xFFF5F2F0);
 
-Color unkown = Color.fromRGBO(
-  242,
-  130,
-  36,
-  1.0,
-);
+
+
+
+// Color orange = Color.fromRGBO(
+//   23,
+//   20,
+//   18,
+//   1.0,
+// );
+// Color darkGray = Color.fromRGBO(
+//   137,
+//   137,
+//   136,
+//   1.0,
+// );
+//
+// Color unkown = Color.fromRGBO(
+//   242,
+//   130,
+//   36,
+//   1.0,
+// );
