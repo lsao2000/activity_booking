@@ -16,11 +16,27 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
   // The currently selected item. It's nullable to handle the case where nothing is selected.
   String? _selectedValue;
 
+  Future<void> loadPreferredLanguage() async {
+    final preferredLanguage = await LanguagePreferences.getPreferredLanguage();
+    setState(() {
+      _selectedValue = preferredLanguage.languageCode == 'en'
+          ? 'English'
+          : preferredLanguage.languageCode == 'es'
+              ? 'Spanish'
+              : preferredLanguage.languageCode == 'fr'
+                  ? 'French'
+                  : preferredLanguage.languageCode == 'ar'
+                      ? 'Arabic'
+                      : _languages[0];
+    });
+  }
+
   @override
   void initState() {
     super.initState();
     // Set the initial value to the first item in the list.
-    _selectedValue = _languages[0];
+    // _selectedValue = _languages[0];
+    loadPreferredLanguage();
   }
 
   @override
@@ -30,7 +46,6 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
       child: DropdownButtonFormField<String>(
         // The value of the currently selected item.
         value: _selectedValue,
-
         items: _languages.map((String value) {
           return DropdownMenuItem<String>(
             value: value,
@@ -53,19 +68,16 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
               Locale locale = Locale("es", "ES");
               Get.updateLocale(locale);
               LanguagePreferences.setPreferredLanguage("es", "ES");
-              debugPrint(Get.locale?.languageCode.toString());
               break;
             case "French":
               Locale locale = Locale("fr", "FR");
               Get.updateLocale(locale);
               LanguagePreferences.setPreferredLanguage("fr", "FR");
-              debugPrint(Get.locale?.languageCode.toString());
               break;
             case "Arabic":
               Locale locale = Locale("ar", "AR");
               Get.updateLocale(locale);
               LanguagePreferences.setPreferredLanguage("ar", "AR");
-              debugPrint(Get.locale?.languageCode.toString());
               break;
 
             default:
@@ -74,17 +86,17 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
 
         decoration: InputDecoration(
           // Adds a rounded border.
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: BorderSide(color: Colors.grey.shade300),
-          ),
+          // enabledBorder: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(8.0),
+          //   borderSide: BorderSide(color: Colors.grey.shade300),
+          // ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0),
             borderSide: BorderSide(color: Colors.grey.shade500),
           ),
           icon: Icon(Icons.language, color: Colors.grey),
-          hoverColor: Colors.grey.shade200,
-          focusColor: Colors.grey.shade200,
+          // hoverColor: Colors.grey.shade200,
+          // focusColor: Colors.grey.shade200,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),

@@ -82,7 +82,9 @@ class IntroductionScreen extends StatelessWidget {
                       backgroundColor: deepOrange,
                       padding: EdgeInsets.symmetric(
                           horizontal: width * 0.1, vertical: height * 0.02)),
-                  onPressed: () {},
+                  onPressed: () {
+                      Get.toNamed('/signup_client');
+                      },
                   child: FittedBox(
                     fit: BoxFit.cover,
                     child: Text(
