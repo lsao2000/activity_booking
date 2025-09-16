@@ -28,15 +28,15 @@ class IntroductionScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 30,
+                    fontFamily: "PlusJakarta",
                     fontWeight: FontWeight.w700,
                   ),
                   children: [
                     TextSpan(
-                      text: "Yalla! ",
+                      text: "brand_name".tr,
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w700,
-                        color:
-                        Color.fromRGBO(
+                        color: Color.fromRGBO(
                           240,
                           90,
                           40,
@@ -83,8 +83,8 @@ class IntroductionScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: width * 0.1, vertical: height * 0.02)),
                   onPressed: () {
-                      Get.toNamed('/signup_client');
-                      },
+                    Get.toNamed('/signup_client');
+                  },
                   child: FittedBox(
                     fit: BoxFit.cover,
                     child: Text(

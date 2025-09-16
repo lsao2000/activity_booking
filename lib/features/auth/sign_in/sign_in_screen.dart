@@ -9,8 +9,8 @@ import 'package:get/get.dart';
 class SignInScreen extends StatelessWidget {
   SignInScreen({super.key});
   bool isObscured = true;
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -24,7 +24,7 @@ class SignInScreen extends StatelessWidget {
                 horizontal: Get.width * 0.04, vertical: Get.height * 0.02),
             child: Column(
               children: [
-                Text('Yalla!',
+                Text('brand_name'.tr,
                     style: TextStyle(
                         color: brandColor,
                         fontSize: 40,
@@ -38,8 +38,11 @@ class SignInScreen extends StatelessWidget {
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
                         validator: (value) {
+                          final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
                           if (value == null || value.isEmpty) {
                             return 'enter_your_email'.tr;
+                          } else if (!emailRegex.hasMatch(value)) {
+                            return "enter_valid_email".tr;
                           }
                           return null;
                         },
@@ -257,7 +260,7 @@ class SignInScreen extends StatelessWidget {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: "already_user".tr,
+                              text: "dont_have_account".tr,
                               style: TextStyle(
                                 color: Colors.black26,
                               ),
