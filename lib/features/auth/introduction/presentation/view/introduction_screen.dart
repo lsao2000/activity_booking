@@ -106,7 +106,9 @@ class IntroductionScreen extends StatelessWidget {
                       backgroundColor: lightGrey,
                       padding: EdgeInsets.symmetric(
                           horizontal: width * 0.1, vertical: height * 0.02)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/signup_admin');
+                      },
                   child: FittedBox(
                     fit: BoxFit.cover,
                     child: Text(
@@ -125,7 +127,7 @@ class IntroductionScreen extends StatelessWidget {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: "already_user".tr,
+                      text: "have_account".tr,
                       style: TextStyle(
                         color: Colors.black26,
                         // fontWeight: FontWeight.bold,

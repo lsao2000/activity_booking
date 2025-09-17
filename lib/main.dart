@@ -2,11 +2,13 @@ import 'package:activity_booking/config/router/activity_routes.dart';
 import 'package:activity_booking/core/utils/translation/language_preferences.dart';
 import 'package:activity_booking/core/utils/translation/translation.dart';
 import 'package:activity_booking/features/auth/introduction/presentation/view/introduction_screen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  GestureBinding.instance.resamplingEnabled = false;
   Locale locale = await LanguagePreferences.getPreferredLanguage();
   runApp(MyApp(locale: locale));
 }
