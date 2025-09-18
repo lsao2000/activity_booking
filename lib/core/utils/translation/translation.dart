@@ -46,6 +46,9 @@ abstract class Translation {
           'phone_number_hint': '624567890',
           'password_hint': '********',
           'check_terms': 'Please agree to the terms and conditions to proceed',
+          'resgister_as_admin': 'Register as Supplier',
+          // 'book_msg_admin': 'Join us and offer your unique experiences!',
+          'book_msg_admin': 'Promote your business with us!',
 
           // 'select_language': 'Select Language',
           // 'next': 'Next',
@@ -100,7 +103,9 @@ abstract class Translation {
           'password_hint': '********',
           'check_terms':
               'Por favor acepte los términos y condiciones para continuar',
-
+          'resgister_as_admin': 'Registrarse como Proveedor',
+          // 'book_msg_admin': '¡Únase a nosotros y ofrezca sus experiencias únicas!',
+          'book_msg_admin': '¡Promocione su negocio con nosotros!',
           // 'select_language': 'Seleccionar idioma',
           // 'next': 'Siguiente',
           // 'skip': 'Omitir',
@@ -156,6 +161,10 @@ abstract class Translation {
           'password_hint': '********',
           'check_terms':
               "Veuillez accepter les termes et conditions pour continuer",
+          'resgister_as_admin': "S'inscrire en tant que Fournisseur",
+          // 'book_msg_admin': "Rejoignez-nous et offrez vos expériences uniques!",
+          'book_msg_admin':
+              'Faites la promotion de votre entreprise avec nous!',
 
           // 'select_language': 'Choisir la langue',
           // 'next': 'Suivant',
@@ -208,6 +217,10 @@ abstract class Translation {
           'phone_number_hint': '624567890',
           'password_hint': '********',
           'check_terms': 'يرجى الموافقة على الشروط والأحكام للمتابعة',
+          'resgister_as_admin': 'التسجيل كمورد',
+          // 'book_msg_admin': 'انضم إلينا وقدم تجاربك الفريدة!',
+          'book_msg_admin': 'قم بالترويج لنشاطك التجاري معنا!',
+
           // 'select_language': 'اختر اللغة',
           // 'next': 'التالي',
           // 'skip': 'تخطي',

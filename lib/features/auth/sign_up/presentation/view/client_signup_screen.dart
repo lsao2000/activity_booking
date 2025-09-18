@@ -6,7 +6,6 @@ import 'package:activity_booking/features/auth/sign_up/presentation/widget/socia
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class ClientSignupScreen extends StatelessWidget {
