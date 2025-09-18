@@ -484,7 +484,8 @@ class ClientSignupScreen extends StatelessWidget {
                       ),
                       SizedBox(height: height * 0.02),
                       Obx(
-                        () => Row(
+                        () =>
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
                           children: [
