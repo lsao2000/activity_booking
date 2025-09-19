@@ -71,6 +71,8 @@ abstract class Translation {
           'location': 'Location',
           'select_location_on_map': 'Select Location on Map',
           'set_location': 'Set Location',
+          'warning':"Warnings ⚠️⚠️!!",
+          "complete_profile":"We need to verify your account to Complete your profile ",
 
           // 'select_language': 'Select Language',
           // 'next': 'Next',
@@ -154,7 +156,8 @@ abstract class Translation {
           'location': 'Ubicación',
           'select_location_on_map': 'Seleccione la Ubicación en el Mapa',
           'set_location': 'Establecer Ubicación',
-
+          'warning':"Advertencias ⚠️⚠️!!",
+          "complete_profile": "Necesitamos verificar su cuenta para completar su perfil."
           // 'select_language': 'Seleccionar idioma',
           // 'next': 'Siguiente',
           // 'skip': 'Omitir',
@@ -239,6 +242,8 @@ abstract class Translation {
           'location': 'Emplacement',
           'select_location_on_map': "Sélectionner l'emplacement sur la carte",
           'set_location': "Définir l'emplacement",
+          'warning':"Avertissements ⚠️⚠️!!",
+          "complete_profile":"We need to verify your account to Complete your profile ",
 
           // 'select_language': 'Choisir la langue',
           // 'next': 'Suivant',
@@ -316,6 +321,8 @@ abstract class Translation {
           'location': 'الموقع',
           'select_location_on_map': 'اختر الموقع على الخريطة',
           'set_location': 'تعيين الموقع',
+          'warning':"!!⚠️⚠️ تحذيرات",
+          "complete_profile": "نحن بحاجة إلى التحقق من حسابك لإكمال ملفك الشخصي."
 
           // 'select_language': 'اختر اللغة',
           // 'next': 'التالي',

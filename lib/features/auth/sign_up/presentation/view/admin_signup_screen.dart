@@ -4,6 +4,7 @@ import 'package:activity_booking/core/utils/constants/user_city_name.dart';
 // import 'package:activity_booking/features/auth/sign_in/sign_in_screen.dart';
 import 'package:activity_booking/features/auth/sign_up/presentation/getx/admin_signup_controller.dart';
 import 'package:activity_booking/features/auth/sign_up/presentation/widget/social_media_widget.dart';
+import 'package:activity_booking/features/auth/verification_type/presentation/view/verfication_type_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -586,6 +587,8 @@ class AdminSignupScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: height * 0.04),
+                      // Obx(
+                      //   () =>
                       Align(
                         alignment: Alignment.center,
                         child: ElevatedButton(
@@ -595,16 +598,20 @@ class AdminSignupScreen extends StatelessWidget {
                                   horizontal: width * 0.3,
                                   vertical: height * 0.01)),
                           onPressed: () {
-                            if (!adminSignupController.isChecked.value &&
-                                adminSignupController.formKey.currentState!
-                                    .validate()) {
+                            if (!adminSignupController.formKey.currentState!
+                                .validate()) {
+                              debugPrint("cant go further");
+                            } else if (!adminSignupController.isChecked.value) {
                               Get.snackbar(
-                                "terms_and_conditions".tr,
+                                duration: const Duration(seconds: 4),
+                                "warning".tr,
                                 "check_terms".tr,
                                 snackPosition: SnackPosition.BOTTOM,
-                                backgroundColor: Colors.redAccent,
-                                colorText: Colors.white,
+                                backgroundColor: brandColor.withAlpha(40),
+                                colorText: black,
                               );
+                            } else {
+                              Get.toNamed(VerficationTypeScreen.route);
                             }
                           },
                           child: FittedBox(
@@ -618,6 +625,7 @@ class AdminSignupScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+                        // ),
                       ),
                       SizedBox(height: height * 0.02),
                       // SocialMediaWidget(),

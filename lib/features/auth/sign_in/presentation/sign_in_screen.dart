@@ -3,7 +3,6 @@
 // }
 import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/features/auth/introduction/presentation/view/introduction_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,7 +19,6 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(title: Text('signin'.tr)),
         body: SingleChildScrollView(
           child: Container(
             margin: EdgeInsets.symmetric(
