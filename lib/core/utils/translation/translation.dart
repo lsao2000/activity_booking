@@ -62,7 +62,7 @@ abstract class Translation {
               'Please Enter your business description',
           'business_description_hint': 'We offer the best tours in the city...',
           'business_logo': 'Business Logo',
-          'upload_business_logo': 'Upload Business Logo',
+          'upload_business_logo': 'Upload Business Logo or Profile photo',
           'select_business_logo': 'Select Business Logo',
           'website_or_social_media': 'Website or Social Media',
           'enter_your_website_or_social_media':
@@ -143,7 +143,9 @@ abstract class Translation {
           'business_description_hint':
               'Ofrecemos los mejores tours en la ciudad...',
           'business_logo': 'Logo del Negocio',
-          'upload_business_logo': 'Subir Logo del Negocio',
+          // 'upload_business_logo': 'Subir Logo del Negocio',
+          'upload_business_logo':
+              'Subir logotipo de la empresa o foto de perfil',
           'select_business_logo': 'Seleccionar Logo del Negocio',
           'website_or_social_media': 'Sitio Web o Redes Sociales',
           'enter_your_website_or_social_media':
@@ -227,7 +229,8 @@ abstract class Translation {
           'business_description_hint':
               "Nous offrons les meilleures visites de la ville...",
           'business_logo': "Logo de l'entreprise",
-          'upload_business_logo': "Télécharger le logo de l'entreprise",
+          'upload_business_logo':
+              'Télécharger un logo professionnel ou une photo de profil',
           'select_business_logo': "Sélectionner le logo de l'entreprise",
           'website_or_social_media': 'Site Web ou Réseaux Sociaux',
           'enter_your_website_or_social_media':
@@ -303,7 +306,7 @@ abstract class Translation {
           'enter_your_business_description': 'الرجاء إدخال وصف نشاطك التجاري',
           'business_description_hint': 'نحن نقدم أفضل الجولات في المدينة...',
           'business_logo': 'شعار النشاط التجاري',
-          'upload_business_logo': 'تحميل شعار النشاط التجاري',
+          'upload_business_logo': 'تحميل شعار العمل أو صورة الملف الشخصي',
           'select_business_logo': 'اختر شعار النشاط التجاري',
           'website_or_social_media':
               'الموقع الإلكتروني أو وسائل التواصل الاجتماعي',

@@ -1,6 +1,7 @@
 import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/core/utils/constants/user_city_name.dart';
-import 'package:activity_booking/features/auth/sign_in/sign_in_screen.dart';
+// import 'package:activity_booking/features/auth/sign_in/sign_in_screen.dart';
+import 'package:activity_booking/features/auth/sign_in/presentation/sign_in_screen.dart';
 import 'package:activity_booking/features/auth/sign_up/presentation/getx/client_signup_controller.dart';
 import 'package:activity_booking/features/auth/sign_up/presentation/widget/social_media_widget.dart';
 import 'package:flutter/gestures.dart';
@@ -40,7 +41,6 @@ class ClientSignupScreen extends StatelessWidget {
                       SizedBox(height: height * 0.03),
                       Text(
                         'register_as_client'.tr,
-                        // textAlign: TextAlign.center,
                         style: TextStyle(
                           color: black,
                           fontSize: 22,
@@ -49,11 +49,9 @@ class ClientSignupScreen extends StatelessWidget {
                       ),
                       Text(
                         'book_msg'.tr,
-                        // textAlign: TextAlign.center,
                         style: TextStyle(
                           color: black,
                           fontSize: 16,
-                          // fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],
@@ -80,7 +78,6 @@ class ClientSignupScreen extends StatelessWidget {
                         controller: clientSignupController.firstNameController,
                         textInputAction: TextInputAction.next,
                         inputFormatters: [
-                          // FilteringTextInputFormatter
                           FilteringTextInputFormatter.allow(
                               RegExp(r'[a-zA-Z]')),
                         ],
@@ -198,8 +195,7 @@ class ClientSignupScreen extends StatelessWidget {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'enter_your_email'.tr;
-                          }
-                          if (!GetUtils.isEmail(value)) {
+                          } else if (!GetUtils.isEmail(value)) {
                             return 'enter_valid_email'.tr;
                           }
                           return null;
@@ -257,8 +253,6 @@ class ClientSignupScreen extends StatelessWidget {
                           hintText: 'phone_number_hint'.tr,
                           hintStyle: TextStyle(color: grey),
                           fillColor: inputColor,
-                          // focusColor: brandColor,
-                          // hoverColor: inputColor,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -352,13 +346,15 @@ class ClientSignupScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: height * 0.02),
-                      Text("confirm_password".tr,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                          )),
+                      Text(
+                        "confirm_password".tr,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                       SizedBox(height: height * 0.01),
                       Obx(
                         () => TextFormField(
@@ -484,8 +480,7 @@ class ClientSignupScreen extends StatelessWidget {
                       ),
                       SizedBox(height: height * 0.02),
                       Obx(
-                        () =>
-                        Row(
+                        () => Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -529,9 +524,6 @@ class ClientSignupScreen extends StatelessWidget {
                                 colorText: Colors.white,
                               );
                             }
-
-                            // if (
-                            // ) {}
                           },
                           child: FittedBox(
                             fit: BoxFit.cover,
