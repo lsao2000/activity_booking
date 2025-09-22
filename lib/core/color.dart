@@ -12,6 +12,8 @@ Color textFieldColor = const Color(0xFFF5F2F0);
 Color btnColor = const Color(0xFFF28224);
 Color socialMediaColor = const Color(0xFFF5F2F0);
 Color inputColor = Colors.black12.withAlpha(15);
+Color otpColor = Color(0xFFF5F2F2);
+Color black26 = Colors.black26;
 
 // Color orange = Color.fromRGBO(
 //   23,

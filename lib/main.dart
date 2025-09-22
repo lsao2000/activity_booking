@@ -2,6 +2,7 @@ import 'package:activity_booking/config/router/activity_routes.dart';
 import 'package:activity_booking/core/utils/translation/language_preferences.dart';
 import 'package:activity_booking/core/utils/translation/translation.dart';
 import 'package:activity_booking/features/auth/introduction/presentation/view/introduction_screen.dart';
+import 'package:activity_booking/features/auth/otp_screen/presentation/view/otp_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       locale: locale,
       fallbackLocale: Locale('en', 'US'),
       getPages: ActivityRoutes.routes,
-      home: const IntroductionScreen(),
+      // home: const IntroductionScreen(),
+      home: OtpScreen(),
     );
   }
 }

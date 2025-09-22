@@ -75,6 +75,12 @@ abstract class Translation {
           "complete_profile":
               "We need to verify your account to Complete your profile ",
           "send_code": "Send Code",
+          "enter_six_digit_code_email":
+              "Enter the 6-digit code sent to  your Email",
+          "enter_six_digit_code_phone":
+              "Enter the 6-digit code sent to  your Phone number",
+          "verify": "Verify",
+          "resend_code": "Resend Code",
 
           // 'select_language': 'Select Language',
           // 'next': 'Next',
@@ -162,6 +168,12 @@ abstract class Translation {
           "complete_profile":
               "Necesitamos verificar su cuenta para completar su perfil.",
           "send_code": "Enviar código",
+          "enter_six_digit_code_email":
+              "Ingresa el código de 6 dígitos enviado a tu correo electrónico",
+          "enter_six_digit_code_phone":
+              "Ingresa el código de 6 dígitos enviado a tu número de teléfono",
+          "verify": "Verificar",
+          "resend_code": "Reenviar código",
 
           // 'select_language': 'Seleccionar idioma',
           // 'next': 'Siguiente',
@@ -251,6 +263,12 @@ abstract class Translation {
           "complete_profile":
               "We need to verify your account to Complete your profile ",
           "send_code": "Envoyer code",
+          "enter_six_digit_code_email":
+              "Entrez le code à 6 chiffres envoyé à votre adresse e-mail",
+          "enter_six_digit_code_phone":
+              "Entrez le code à 6 chiffres envoyé à votre numéro de téléphone",
+          "verify": "Vérifier",
+          "resend_code": "Renvoyer le code",
 
           // 'select_language': 'Choisir la langue',
           // 'next': 'Suivant',
@@ -332,6 +350,12 @@ abstract class Translation {
           "complete_profile":
               "نحن بحاجة إلى التحقق من حسابك لإكمال ملفك الشخصي.",
           "send_code": "ارسال الرمز",
+          "enter_six_digit_code_email":
+              "أدخل الرمز المكون من 6 أرقام المرسل إلى بريدك الإلكتروني",
+          "enter_six_digit_code_phone":
+              "أدخل الرمز المكون من 6 أرقام المرسل إلى رقم هاتفك",
+          "verify": "تحقق",
+          "resend_code": "إعادة إرسال الرمز",
 
           // 'select_language': 'اختر اللغة',
           // 'next': 'التالي',
