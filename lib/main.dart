@@ -10,6 +10,11 @@ import 'package:get/get.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GestureBinding.instance.resamplingEnabled = false;
+  // s(() {
+
+  //   FlutterSecureStorage.setMockInitialValues({});
+  // });
+
   Locale locale = await LanguagePreferences.getPreferredLanguage();
   runApp(MyApp(locale: locale));
 }
@@ -26,7 +31,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       translationsKeys: Translation.keys,
       // theme: Get.theme,
-      // locale: Get.deviceLocale,
       locale: locale,
       fallbackLocale: Locale('en', 'US'),
       getPages: ActivityRoutes.routes,

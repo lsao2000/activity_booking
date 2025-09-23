@@ -1,8 +1,6 @@
-// class vj {
-//
-// }
 import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/features/auth/introduction/presentation/view/introduction_screen.dart';
+import 'package:activity_booking/features/auth/sign_in/presentation/getx/sign_in_controller.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,10 +8,8 @@ import 'package:get/get.dart';
 
 class SignInScreen extends StatelessWidget {
   SignInScreen({super.key});
-  bool isObscured = true;
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
+  static final String route = "/sign_in";
+  final SignInController signInController = Get.put(SignInController());
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +28,13 @@ class SignInScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold)),
                 SizedBox(height: Get.height * 0.04),
                 Form(
-                  key: _formKey,
+                  key: signInController.formKey,
                   child: Column(
                     children: [
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
+                        controller: signInController.emailController,
                         validator: (value) {
                           final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
                           if (value == null || value.isEmpty) {
@@ -66,45 +63,48 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: Get.height * 0.02),
-                      TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'enter_your_password'.tr;
-                          }
-                          return null;
-                        },
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.done,
-                        decoration: InputDecoration(
-                          suffixIcon: isObscured
-                              ? IconButton(
-                                  onPressed: () {
-                                    isObscured = !isObscured;
-                                  },
-                                  icon: Icon(Icons.visibility_off_outlined))
-                              : IconButton(
-                                  onPressed: () {
-                                    isObscured = !isObscured;
-                                  },
-                                  icon: Icon(Icons.visibility),
-                                ),
-                          labelText: 'password'.tr,
-                          labelStyle: TextStyle(color: grey),
-                          fillColor: textFieldColor,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
+                      Obx(
+                        () => TextFormField(
+                          controller: signInController.passwordController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'enter_your_password'.tr;
+                            }
+                            return null;
+                          },
+                          keyboardType: TextInputType.visiblePassword,
+                          textInputAction: TextInputAction.done,
+                          decoration: InputDecoration(
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                // isObscured = !isObscured;
+                                signInController.changePasswordVisibility();
+                              },
+                              icon: signInController.passwordVisible.value
+                                  ? Icon(Icons.visibility_off_outlined)
+                                  : Icon(Icons.visibility),
+                              // )
+                            ),
+                            labelText: 'password'.tr,
+                            labelStyle: TextStyle(color: grey),
+                            fillColor: textFieldColor,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: brandColor, width: 1),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: lightGrey, width: 1),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: brandColor, width: 1),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: lightGrey, width: 1),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
+                          obscureText: signInController.passwordVisible.value,
                         ),
-                        obscureText: isObscured,
                       ),
                       Align(
                         alignment: Alignment.centerRight,
@@ -131,7 +131,8 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            if (_formKey.currentState!.validate()) {
+                            if (signInController.formKey.currentState!
+                                .validate()) {
                               // Process data.
                             }
                             // Get.to(() => HomeScreen());

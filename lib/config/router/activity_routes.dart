@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 class ActivityRoutes {
   static final routes = [
     GetPage(name: "/intro", page: () => IntroductionScreen()),
-    GetPage(name: "/sign_in", page: () => SignInScreen()),
+    GetPage(name: SignInScreen.route, page: () => SignInScreen()),
     GetPage(name: "/signup_client", page: () => ClientSignupScreen()),
     GetPage(name: "/signup_admin", page: () => AdminSignupScreen()),
     GetPage(

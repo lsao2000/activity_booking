@@ -1,5 +1,7 @@
+import 'package:activity_booking/features/auth/verification_type/presentation/view/verfication_type_screen.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 
 class AdminSignupController extends GetxController {
@@ -47,6 +49,32 @@ class AdminSignupController extends GetxController {
           countryCode.value = "+${country.phoneCode}";
           countryCode.refresh();
         });
+  }
+
+  Future<void> goToVerificationScreen() async {
+    Future.wait([storeEmailSession(), storePasswordSession()]).whenComplete(() {
+      Get.toNamed(VerficationTypeScreen.route);
+    });
+  }
+
+  Future<void> storeEmailSession() async {
+    try {
+      FlutterSecureStorage flutterSecureStorage = FlutterSecureStorage();
+      flutterSecureStorage.write(
+          key: "email", value: emailController.text.toString());
+    } catch (e) {
+      debugPrint("fail to save email: ${e.toString()}");
+    }
+  }
+
+  Future<void> storePasswordSession() async {
+    try {
+      FlutterSecureStorage flutterSecureStorage = FlutterSecureStorage();
+      flutterSecureStorage.write(
+          key: "password", value: passwordController.text.toString());
+    } catch (e) {
+      debugPrint("fail to save password:${e.toString()}");
+    }
   }
 }
 

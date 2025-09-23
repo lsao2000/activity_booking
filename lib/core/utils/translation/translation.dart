@@ -81,7 +81,11 @@ abstract class Translation {
               "Enter the 6-digit code sent to  your Phone number",
           "verify": "Verify",
           "resend_code": "Resend Code",
-
+          "incorrect_otp": "Incorrect Otp code",
+          "verified": "✅ Verified!",
+          "msg_verified":
+              "Your account has been verified successfully! Welcome to Yalla! the coolest Activity Booking app.",
+          "done": "Done",
           // 'select_language': 'Select Language',
           // 'next': 'Next',
           // 'skip': 'Skip',
@@ -174,6 +178,11 @@ abstract class Translation {
               "Ingresa el código de 6 dígitos enviado a tu número de teléfono",
           "verify": "Verificar",
           "resend_code": "Reenviar código",
+          "incorrect_otp": "Código OTP incorrecto",
+          "verified": "✅ ¡Verificado!",
+          "msg_verified":
+              "¡Tu cuenta ha sido verificada exitosamente! Bienvenido a Yalla! la aplicación de reserva de actividades más genial.",
+          "done": "Hecho"
 
           // 'select_language': 'Seleccionar idioma',
           // 'next': 'Siguiente',
@@ -269,6 +278,11 @@ abstract class Translation {
               "Entrez le code à 6 chiffres envoyé à votre numéro de téléphone",
           "verify": "Vérifier",
           "resend_code": "Renvoyer le code",
+          "incorrect_otp": "Code OTP incorrect",
+          "verified": "✅ Vérifié !",
+          "msg_verified":
+              "Votre compte a été vérifié avec succès ! Bienvenue sur Yalla ! l'application de réservation d'activités la plus cool.",
+          "done": "Terminé"
 
           // 'select_language': 'Choisir la langue',
           // 'next': 'Suivant',
@@ -356,6 +370,11 @@ abstract class Translation {
               "أدخل الرمز المكون من 6 أرقام المرسل إلى رقم هاتفك",
           "verify": "تحقق",
           "resend_code": "إعادة إرسال الرمز",
+          "incorrect_otp": "غير صحيح OTP رمز ",
+          "verified": "✅ تم التحقق!",
+          "msg_verified":
+              "تم التحقق من حسابك بنجاح! مرحبًا بك في Yalla! تطبيق حجز الأنشطة الأروع.",
+          "done": "تم"
 
           // 'select_language': 'اختر اللغة',
           // 'next': 'التالي',

@@ -1,10 +1,8 @@
 import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/core/utils/constants/activity_categories.dart';
 import 'package:activity_booking/core/utils/constants/user_city_name.dart';
-// import 'package:activity_booking/features/auth/sign_in/sign_in_screen.dart';
 import 'package:activity_booking/features/auth/sign_up/presentation/getx/admin_signup_controller.dart';
 import 'package:activity_booking/features/auth/sign_up/presentation/widget/social_media_widget.dart';
-import 'package:activity_booking/features/auth/verification_type/presentation/view/verfication_type_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -611,7 +609,7 @@ class AdminSignupScreen extends StatelessWidget {
                                 colorText: black,
                               );
                             } else {
-                              Get.toNamed(VerficationTypeScreen.route);
+                              adminSignupController.goToVerificationScreen();
                             }
                           },
                           child: FittedBox(

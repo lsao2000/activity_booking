@@ -1,5 +1,6 @@
 import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/features/auth/otp_screen/presentation/getx/otp_screen_controller.dart';
+import 'package:activity_booking/features/auth/sign_in/presentation/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -72,10 +73,15 @@ class OtpScreen extends StatelessWidget {
                           FilteringTextInputFormatter.digitsOnly
                         ],
                         pinputAutovalidateMode: PinputAutovalidateMode.disabled,
+                        errorTextStyle: TextStyle(
+                          fontSize: 12,
+                          color: Colors.red,
+                        ),
                         validator: (value) {
                           if (value != "492929") {
-                            return "Incorrect Otp Code";
+                            return "incorrect_otp".tr;
                           }
+                          debugPrint("valid");
                           return null;
                         },
                       ),
@@ -91,32 +97,47 @@ class OtpScreen extends StatelessWidget {
                               .validate()) {
                             // Get.toNamed("");
                             showDialog(
+                              barrierDismissible: false,
                               context: context,
                               builder: (context) => AlertDialog(
-                                title: Text("✅ Verified!"),
-                                content: Text(
-                                    "Your account has been verified successfully! Welcome to Activity Booking!"),
+                                backgroundColor: white,
+                                title: Text(
+                                  "verified".tr,
+                                  style: TextStyle(
+                                    color: black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8)),
+                                content: Text("msg_verified".tr),
+                                actionsAlignment: MainAxisAlignment.center,
                                 actions: [
                                   TextButton(
-                                    onPressed: () => Navigator.pop(context),
-                                    child: Text("Great!"),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                      Get.toNamed(SignInScreen.route);
+                                    },
+                                    style: TextButton.styleFrom(
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: height * 0.01,
+                                            horizontal: width * 0.08),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                              width * 0.1),
+                                        ),
+                                        backgroundColor: deepOrange),
+                                    child: Text(
+                                      "done".tr,
+                                      style: TextStyle(
+                                          color: white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w700),
+                                    ),
                                   ),
                                 ],
                               ),
                             );
-                            // showDialog(
-                            //     context: context,
-                            //     builder: (ctx) {
-                            //       return Container(
-                            //         child: Column(
-                            //           children: [
-                            //             Text(
-                            //                 "Your account has been created successfully"),
-                            //             Text(""),
-                            //           ],
-                            //         ),
-                            //       );
-                            //     });
                           }
                         },
                         child: Text(
