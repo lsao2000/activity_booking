@@ -517,12 +517,15 @@ class ClientSignupScreen extends StatelessWidget {
                                 clientSignupController.formKey.currentState!
                                     .validate()) {
                               Get.snackbar(
-                                "terms_and_conditions".tr,
+                                duration: const Duration(seconds: 4),
+                                "warning".tr,
                                 "check_terms".tr,
                                 snackPosition: SnackPosition.BOTTOM,
-                                backgroundColor: Colors.redAccent,
-                                colorText: Colors.white,
+                                backgroundColor: brandColor.withAlpha(40),
+                                colorText: black,
                               );
+                            } else {
+                              clientSignupController.goToLogin();
                             }
                           },
                           child: FittedBox(

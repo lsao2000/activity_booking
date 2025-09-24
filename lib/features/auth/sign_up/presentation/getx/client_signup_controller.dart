@@ -1,5 +1,7 @@
+import 'package:activity_booking/features/auth/sign_in/presentation/sign_in_screen.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 
 class ClientSignupController extends GetxController {
@@ -44,5 +46,21 @@ class ClientSignupController extends GetxController {
           countryCode.value = "+${country.phoneCode}";
           countryCode.refresh();
         });
+  }
+
+  Future<void> goToLogin() async {
+    Future.any([storeEmailSession(), storePasswordSession()]).whenComplete(() {
+      Get.toNamed(SignInScreen.route);
+    });
+  }
+
+  Future<void> storeEmailSession() async {
+    FlutterSecureStorage flutterSecureStorage = FlutterSecureStorage();
+    flutterSecureStorage.write(key: "email", value: emailController.text);
+  }
+
+  Future<void> storePasswordSession() async {
+    FlutterSecureStorage flutterSecureStorage = FlutterSecureStorage();
+    flutterSecureStorage.write(key: "password", value: passwordController.text);
   }
 }
