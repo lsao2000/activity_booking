@@ -52,7 +52,9 @@ class AdminSignupController extends GetxController {
   }
 
   Future<void> goToVerificationScreen() async {
-    Future.wait([storeEmailSession(), storePasswordSession()]).whenComplete(() {
+    Future.wait(
+            [storeEmailSession(), storePasswordSession(), storeSessionType()])
+        .whenComplete(() {
       Get.toNamed(VerficationTypeScreen.route);
     });
   }
@@ -64,6 +66,15 @@ class AdminSignupController extends GetxController {
           key: "email", value: emailController.text.toString());
     } catch (e) {
       debugPrint("fail to save email: ${e.toString()}");
+    }
+  }
+
+  Future<void> storeSessionType() async {
+    try {
+      FlutterSecureStorage flutterSecureStorage = FlutterSecureStorage();
+      flutterSecureStorage.write(key: "type", value: "admin");
+    } catch (e) {
+      debugPrint("Fail to store session type: ${e.toString()}");
     }
   }
 

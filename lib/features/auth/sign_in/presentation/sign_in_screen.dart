@@ -1,4 +1,5 @@
 import 'package:activity_booking/core/color.dart';
+import 'package:activity_booking/core/utils/user_type.dart';
 import 'package:activity_booking/features/auth/introduction/presentation/view/introduction_screen.dart';
 import 'package:activity_booking/features/auth/sign_in/presentation/getx/sign_in_controller.dart';
 import 'package:flutter/gestures.dart';
@@ -130,12 +131,16 @@ class SignInScreen extends StatelessWidget {
                                   BorderRadius.circular(Get.width * 0.2),
                             ),
                           ),
-                          onPressed: () {
-                            if (signInController.formKey.currentState!
+                          onPressed: () async {
+                            if (!signInController.formKey.currentState!
                                 .validate()) {
                               // Process data.
+                              debugPrint("something off");
+                            } else {
+                              // debugPrint("something off");
                             }
-                            // Get.to(() => HomeScreen());
+                            String type = await getSessionType();
+                            debugPrint("Type:$type");
                           },
                           child: Text(
                             'signin'.tr,

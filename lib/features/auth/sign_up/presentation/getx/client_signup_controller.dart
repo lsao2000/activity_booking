@@ -49,9 +49,16 @@ class ClientSignupController extends GetxController {
   }
 
   Future<void> goToLogin() async {
-    Future.any([storeEmailSession(), storePasswordSession()]).whenComplete(() {
+    Future.any(
+            [storeEmailSession(), storePasswordSession(), storeSessionType()])
+        .whenComplete(() {
       Get.toNamed(SignInScreen.route);
     });
+  }
+
+  Future<void> storeSessionType() async {
+    FlutterSecureStorage flutterSecureStorage = FlutterSecureStorage();
+    flutterSecureStorage.write(key: "type", value: "client");
   }
 
   Future<void> storeEmailSession() async {

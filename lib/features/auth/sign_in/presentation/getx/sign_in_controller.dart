@@ -15,6 +15,8 @@ class SignInController extends GetxController {
     await getEmailSession();
   }
 
+
+
   Future<void> changePasswordVisibility() async {
     passwordVisible.value = !passwordVisible.value;
     passwordVisible.refresh();
@@ -33,4 +35,5 @@ class SignInController extends GetxController {
     debugPrint("email: $email");
     emailController.text = email ?? "";
   }
+
 }
