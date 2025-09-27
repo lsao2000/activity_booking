@@ -1,3 +1,4 @@
+import 'package:activity_booking/core/utils/user_type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
@@ -13,13 +14,17 @@ class SignInController extends GetxController {
     debugPrint("SignInController initiliazed");
     await getPasswordSession();
     await getEmailSession();
+    getUserType();
   }
-
-
 
   Future<void> changePasswordVisibility() async {
     passwordVisible.value = !passwordVisible.value;
     passwordVisible.refresh();
+  }
+
+  Future<void> getUserType() async {
+    String type = await getSessionType();
+    debugPrint("type: $type");
   }
 
   Future<void> getPasswordSession() async {
@@ -35,5 +40,4 @@ class SignInController extends GetxController {
     debugPrint("email: $email");
     emailController.text = email ?? "";
   }
-
 }
