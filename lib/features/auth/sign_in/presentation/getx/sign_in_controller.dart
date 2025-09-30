@@ -1,4 +1,6 @@
 import 'package:activity_booking/core/utils/user_type.dart';
+import 'package:activity_booking/features/admin/home/presentation/view/admin_home_screen.dart';
+import 'package:activity_booking/features/client/home/presentation/view/client_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
@@ -25,6 +27,14 @@ class SignInController extends GetxController {
   Future<void> getUserType() async {
     String type = await getSessionType();
     debugPrint("type: $type");
+  }
+
+  Future<void> goToHome(String type) async {
+    if (type == "client") {
+      Get.toNamed(ClientHomeScreen.route);
+    } else {
+      Get.toNamed(AdminHomeScreen.route);
+    }
   }
 
   Future<void> getPasswordSession() async {

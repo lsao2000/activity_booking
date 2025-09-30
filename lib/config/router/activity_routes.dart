@@ -1,9 +1,11 @@
+import 'package:activity_booking/features/admin/home/presentation/view/admin_home_screen.dart';
 import 'package:activity_booking/features/auth/introduction/presentation/view/introduction_screen.dart';
 import 'package:activity_booking/features/auth/otp_screen/presentation/view/otp_screen.dart';
 import 'package:activity_booking/features/auth/sign_in/presentation/sign_in_screen.dart';
 import 'package:activity_booking/features/auth/sign_up/presentation/view/admin_signup_screen.dart';
 import 'package:activity_booking/features/auth/sign_up/presentation/view/client_signup_screen.dart';
 import 'package:activity_booking/features/auth/verification_type/presentation/view/verfication_type_screen.dart';
+import 'package:activity_booking/features/client/home/presentation/view/client_home_screen.dart';
 import 'package:get/get.dart';
 
 class ActivityRoutes {
@@ -14,6 +16,8 @@ class ActivityRoutes {
     GetPage(name: "/signup_admin", page: () => AdminSignupScreen()),
     GetPage(
         name: VerficationTypeScreen.route, page: () => VerficationTypeScreen()),
-    GetPage(name: OtpScreen.route, page: () => OtpScreen())
+    GetPage(name: OtpScreen.route, page: () => OtpScreen()),
+    GetPage(name: ClientHomeScreen.route, page: () => ClientHomeScreen()),
+    GetPage(name: AdminHomeScreen.route, page: () => AdminHomeScreen()),
   ];
 }

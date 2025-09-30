@@ -86,6 +86,7 @@ abstract class Translation {
           "msg_verified":
               "Your account has been verified successfully! Welcome to Yalla! the coolest Activity Booking app.",
           "done": "Done",
+          "user_greeting":"Welcome back"
           // 'select_language': 'Select Language',
           // 'next': 'Next',
           // 'skip': 'Skip',
@@ -182,7 +183,9 @@ abstract class Translation {
           "verified": "✅ ¡Verificado!",
           "msg_verified":
               "¡Tu cuenta ha sido verificada exitosamente! Bienvenido a Yalla! la aplicación de reserva de actividades más genial.",
-          "done": "Hecho"
+          "done": "Hecho",
+          "user_greeting": "Bienvenido de nuevo",
+
 
           // 'select_language': 'Seleccionar idioma',
           // 'next': 'Siguiente',
@@ -282,7 +285,8 @@ abstract class Translation {
           "verified": "✅ Vérifié !",
           "msg_verified":
               "Votre compte a été vérifié avec succès ! Bienvenue sur Yalla ! l'application de réservation d'activités la plus cool.",
-          "done": "Terminé"
+          "done": "Terminé",
+          "user_greeting": "Bon retour",
 
           // 'select_language': 'Choisir la langue',
           // 'next': 'Suivant',
@@ -374,7 +378,8 @@ abstract class Translation {
           "verified": "✅ تم التحقق!",
           "msg_verified":
               "تم التحقق من حسابك بنجاح! مرحبًا بك في Yalla! تطبيق حجز الأنشطة الأروع.",
-          "done": "تم"
+          "done": "تم",
+          "user_greeting": "مرحبًا بعودتك",
 
           // 'select_language': 'اختر اللغة',
           // 'next': 'التالي',

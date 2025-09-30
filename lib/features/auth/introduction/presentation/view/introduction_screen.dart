@@ -1,4 +1,5 @@
 import 'package:activity_booking/core/color.dart';
+import 'package:activity_booking/features/auth/introduction/presentation/getx/introduction_controller.dart';
 import 'package:activity_booking/features/auth/introduction/presentation/widget/language_drop_down.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,9 @@ import 'package:get/get_utils/src/extensions/export.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class IntroductionScreen extends StatelessWidget {
-  const IntroductionScreen({super.key});
+  IntroductionScreen({super.key});
+  final IntroductionController introductionController =
+      Get.put(IntroductionController());
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -108,7 +111,7 @@ class IntroductionScreen extends StatelessWidget {
                           horizontal: width * 0.1, vertical: height * 0.02)),
                   onPressed: () {
                     Get.toNamed('/signup_admin');
-                      },
+                  },
                   child: FittedBox(
                     fit: BoxFit.cover,
                     child: Text(

@@ -134,13 +134,11 @@ class SignInScreen extends StatelessWidget {
                           onPressed: () async {
                             if (!signInController.formKey.currentState!
                                 .validate()) {
-                              // Process data.
                               debugPrint("something off");
                             } else {
-                              // debugPrint("something off");
+                              String type = await getSessionType();
+                              signInController.goToHome(type);
                             }
-                            String type = await getSessionType();
-                            debugPrint("Type:$type");
                           },
                           child: Text(
                             'signin'.tr,

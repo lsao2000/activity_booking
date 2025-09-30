@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       locale: locale,
       fallbackLocale: Locale('en', 'US'),
       getPages: ActivityRoutes.routes,
-      home: const IntroductionScreen(),
+      home: IntroductionScreen(),
     );
   }
 }
