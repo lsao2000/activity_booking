@@ -81,7 +81,7 @@ class ClientHomeScreen extends StatelessWidget {
                       itemBuilder: (ctx, index) {
                         String item = ActivityCategories.categories[index];
                         return Container(
-                        alignment: Alignment.center,
+                          alignment: Alignment.center,
                           margin: EdgeInsets.symmetric(horizontal: 6),
                           decoration: BoxDecoration(
                               color: black26.withAlpha(20),
@@ -94,6 +94,37 @@ class ClientHomeScreen extends StatelessWidget {
                           ),
                         );
                       }),
+                ),
+                SizedBox(
+                  height: Get.height * 0.04,
+                ),
+                SizedBox(
+                  height: Get.height * 0.23,
+                  width: Get.width,
+                  child: ListView.builder(
+                      itemCount: 2,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (ctx, index) {
+                        return Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 4),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.network(
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR38r39NMGm-5S7oBdrfUm2y4L-bLU9ljUSAg&s",
+                                  fit: BoxFit.fill,
+                                  width: Get.width * 0.6,
+                                  height: Get.height*0.16,
+                                ),
+                              ),
+                            )
+                          ],
+                        );
+                      }),
+                ),
+                SizedBox(
+                  height: Get.height * 0.01,
                 ),
               ],
             ),
