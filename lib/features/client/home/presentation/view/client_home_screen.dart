@@ -1,5 +1,5 @@
 import 'package:activity_booking/core/color.dart';
-import 'package:activity_booking/core/utils/themes/core_styles.dart';
+import 'package:activity_booking/features/client/home/presentation/getx/home_controller.dart';
 import 'package:activity_booking/features/client/home/presentation/widget/activity_category.dart';
 import 'package:activity_booking/features/client/home/presentation/widget/nearby_activity.dart';
 import 'package:activity_booking/features/client/home/presentation/widget/overview_images_activity.dart';
@@ -7,40 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ClientHomeScreen extends StatelessWidget {
-  const ClientHomeScreen({super.key});
+  ClientHomeScreen({super.key});
   static final String route = "/client-home";
+  final HomeController homeController = Get.put(HomeController());
+
   @override
   Widget build(BuildContext context) {
-    return
-        // SafeArea(
-        //   child: Scaffold(
-        //     appBar: AppBar(
-        //       toolbarHeight: Get.height * 0.08,
-        //       shadowColor: black,
-        //       elevation: 2,
-        //       backgroundColor: Colors.white,
-        //       title: Container(
-        //         margin: EdgeInsets.symmetric(
-        //           vertical: Get.height * 0.02,
-        //         ),
-        //         child: Text(
-        //           "brand_name".tr,
-        //           style: appBarStyle,
-        //         ),
-        //       ),
-        //       automaticallyImplyLeading: false,
-        //       actions: [
-        //         InkWell(
-        //           onTap: () {},
-        //           child: Icon(Icons.notifications_outlined),
-        //         ),
-        //         SizedBox(
-        //           width: Get.width * 0.02,
-        //         ),
-        //       ],
-        //     ),
-        //     body:
-        SingleChildScrollView(
+    return SingleChildScrollView(
       child: Container(
         padding: EdgeInsets.symmetric(vertical: Get.height * 0.01),
         child: Column(
@@ -77,12 +50,6 @@ class ClientHomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      // ),
-      // bottomNavigationBar: BottomNavigationBar(items: [
-      //   BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
-      //   BottomNavigationBarItem(
-      //       icon: Icon(Icons.calendar_month), label: "booking"),
-      // ]),
       // ),
     );
   }
