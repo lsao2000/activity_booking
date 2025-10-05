@@ -6,6 +6,7 @@ import 'package:activity_booking/features/auth/sign_up/presentation/view/admin_s
 import 'package:activity_booking/features/auth/sign_up/presentation/view/client_signup_screen.dart';
 import 'package:activity_booking/features/auth/verification_type/presentation/view/verfication_type_screen.dart';
 import 'package:activity_booking/features/client/home/presentation/view/client_home_screen.dart';
+import 'package:activity_booking/features/client/main/presentation/view/main_screen.dart';
 import 'package:get/get.dart';
 
 class ActivityRoutes {
@@ -19,5 +20,6 @@ class ActivityRoutes {
     GetPage(name: OtpScreen.route, page: () => OtpScreen()),
     GetPage(name: ClientHomeScreen.route, page: () => ClientHomeScreen()),
     GetPage(name: AdminHomeScreen.route, page: () => AdminHomeScreen()),
+    GetPage(name: MainScreen.route, page: () => MainScreen()),
   ];
 }

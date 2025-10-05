@@ -14,6 +14,7 @@ Color socialMediaColor = const Color(0xFFF5F2F0);
 Color inputColor = Colors.black12.withAlpha(15);
 Color otpColor = Color(0xFFF5F2F2);
 Color black26 = Colors.black26;
+Color unselectedItem = Color(0xFF8C8C8C);
 
 // Color orange = Color.fromRGBO(
 //   23,

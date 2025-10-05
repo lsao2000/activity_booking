@@ -1,6 +1,7 @@
 import 'package:activity_booking/core/utils/user_type.dart';
 import 'package:activity_booking/features/admin/home/presentation/view/admin_home_screen.dart';
 import 'package:activity_booking/features/client/home/presentation/view/client_home_screen.dart';
+import 'package:activity_booking/features/client/main/presentation/view/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,7 @@ class IntroductionController extends GetxController {
     if (email.isNotEmpty && password.isNotEmpty) {
       String sessionType = await getSessionType();
       if (sessionType == "client") {
-        Get.toNamed(ClientHomeScreen.route);
+        Get.toNamed(MainScreen.route);
       } else {
         Get.toNamed(AdminHomeScreen.route);
       }
