@@ -3,6 +3,7 @@ import 'package:activity_booking/core/utils/themes/core_styles.dart';
 import 'package:activity_booking/features/client/bookings/presentation/view/booking_screen.dart';
 import 'package:activity_booking/features/client/home/presentation/view/client_home_screen.dart';
 import 'package:activity_booking/features/client/main/presentation/getx/main_controller.dart';
+import 'package:activity_booking/features/client/search/presentation/view/client_search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -45,7 +46,11 @@ class MainScreen extends StatelessWidget {
             ),
             body: IndexedStack(
               index: mainController.selectedIndex.value,
-              children: [ClientHomeScreen(), BookingScreen()],
+              children: [
+                ClientHomeScreen(),
+                BookingScreen(),
+                ClientSearchScreen()
+              ],
             ),
             bottomNavigationBar: BottomNavigationBar(
                 selectedItemColor: brandColor,
@@ -60,9 +65,11 @@ class MainScreen extends StatelessWidget {
                 ),
                 items: [
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.home), label: "Home"),
+                      icon: Icon(Icons.home,weight: 2,), label: "Home"),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.calendar_month), label: "Booking"),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.search,weight: 5,), label: "Search"),
                 ]),
           ),
         ),

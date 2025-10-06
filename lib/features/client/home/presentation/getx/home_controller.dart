@@ -1,4 +1,6 @@
+import 'package:activity_booking/core/utils/constants/activity_categories.dart';
 import 'package:activity_booking/features/client/home/domain/entities/activity_category_entity.dart';
+import 'package:activity_booking/features/client/home/domain/entities/category_of_activity.dart';
 import 'package:activity_booking/features/client/home/domain/entities/nearby_category_entity.dart';
 import 'package:get/get.dart';
 
@@ -6,12 +8,38 @@ class HomeController extends GetxController {
   RxList<ActivityCategoryEntity> lstActivityCategories =
       <ActivityCategoryEntity>[].obs;
   RxList<NearbyCategoryEntity> lstNearbyActivity = <NearbyCategoryEntity>[].obs;
+  RxList<CategoryOfActivity> lstCategory = <CategoryOfActivity>[].obs;
+  RxList<String> lstItems = [
+    'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=500&auto=format',
+    'https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=500&auto=format',
+    'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500',
+  ].obs;
 
   @override
   void onInit() {
     super.onInit();
     loadNearbyActivity();
     loadActivityCategories();
+    loadCategory();
+  }
+
+  void loadCategory() {
+    lstCategory.value = ActivityCategories.categories.map((e) {
+      if (ActivityCategories.categories.indexOf(e) == 0) {
+        return CategoryOfActivity(category: e, isSelected: true);
+      }
+      return CategoryOfActivity(category: e, isSelected: false);
+    }).toList();
+  }
+
+  void updateSelectedCategory(int index) {
+    lstCategory.value = ActivityCategories.categories.map((e) {
+      if (ActivityCategories.categories.indexOf(e) == index) {
+        return CategoryOfActivity(category: e, isSelected: true);
+      }
+      return CategoryOfActivity(category: e, isSelected: false);
+    }).toList();
   }
 
   void loadNearbyActivity() {

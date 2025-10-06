@@ -1,6 +1,7 @@
 import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/core/utils/constants/activity_categories.dart';
 import 'package:activity_booking/features/client/home/domain/entities/activity_category_entity.dart';
+import 'package:activity_booking/features/client/home/domain/entities/category_of_activity.dart';
 import 'package:activity_booking/features/client/home/presentation/getx/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,40 +14,60 @@ class ActivityCategory extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: Get.height * 0.03,
+          height: Get.height * 0.04,
           width: Get.width,
-          child: ListView.builder(
-              itemCount: ActivityCategories.categories.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (ctx, index) {
-                String item = ActivityCategories.categories[index];
-                if (index + 1 == ActivityCategories.categories.length) {
+          child: Obx(
+            () => ListView.builder(
+                itemCount: homeController.lstCategory.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (ctx, index) {
+                  CategoryOfActivity item = homeController.lstCategory[index];
+                  if (item.isSelected) {
+                    return Container(
+                      alignment: Alignment.center,
+                      margin: index + 1 == ActivityCategories.categories.length
+                          ? EdgeInsets.only(left: 15, right: 15)
+                          : EdgeInsets.only(left: 15),
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                            backgroundColor: brandColor,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20))),
+                        onPressed: () {
+                          homeController.updateSelectedCategory(index);
+                        },
+                        child: Text(
+                          item.category,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: white,
+                          ),
+                        ),
+                      ),
+                    );
+                  }
                   return Container(
                     alignment: Alignment.center,
-                    margin: EdgeInsets.only(left: 15, right: 15),
-                    decoration: BoxDecoration(
-                        color: black26.withAlpha(20),
-                        borderRadius: BorderRadius.circular(20)),
-                    padding: EdgeInsets.symmetric(horizontal: Get.width * 0.03),
-                    child: Text(
-                      item,
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                    margin: index + 1 == ActivityCategories.categories.length
+                        ? EdgeInsets.only(left: 15, right: 15)
+                        : EdgeInsets.only(left: 15),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                          backgroundColor: black26.withAlpha(20),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20))),
+                      onPressed: () {
+                        homeController.updateSelectedCategory(index);
+                      },
+                      child: Text(
+                        item.category,
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, color: grey),
+                      ),
                     ),
                   );
-                }
-                return Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: 15),
-                  decoration: BoxDecoration(
-                      color: black26.withAlpha(20),
-                      borderRadius: BorderRadius.circular(20)),
-                  padding: EdgeInsets.symmetric(horizontal: Get.width * 0.03),
-                  child: Text(
-                    item,
-                    style: TextStyle(fontWeight: FontWeight.w500),
-                  ),
-                );
-              }),
+                }),
+          ),
         ),
         SizedBox(
           height: Get.height * 0.014,
@@ -95,7 +116,8 @@ class ActivityCategory extends StatelessWidget {
                           RichText(
                             text: TextSpan(children: [
                               TextSpan(
-                                  text: "${activityCategoryEntity.city} . ${activityCategoryEntity.rate}",
+                                  text:
+                                      "${activityCategoryEntity.city} . ${activityCategoryEntity.rate}",
                                   style: TextStyle(
                                       color: brandColor,
                                       fontSize: 14,
@@ -128,7 +150,7 @@ class ActivityCategory extends StatelessWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.network(
-                              activityCategoryEntity.imageUrl,
+                            activityCategoryEntity.imageUrl,
                             fit: BoxFit.fill,
                             width: Get.width * 0.6,
                             height: Get.height * 0.16,
@@ -151,7 +173,8 @@ class ActivityCategory extends StatelessWidget {
                         RichText(
                           text: TextSpan(children: [
                             TextSpan(
-                                text: "${activityCategoryEntity.city} . ${activityCategoryEntity.rate}",
+                                text:
+                                    "${activityCategoryEntity.city} . ${activityCategoryEntity.rate}",
                                 style: TextStyle(
                                     color: brandColor,
                                     fontSize: 14,
