@@ -90,7 +90,7 @@ class NearbyActivity extends StatelessWidget {
                             text: TextSpan(children: [
                               TextSpan(
                                   text:
-                                      "Marrakech . ${nearbyCategoryEntity.rate}",
+                                      "${nearbyCategoryEntity.city.toLowerCase().tr} . ${nearbyCategoryEntity.rate}",
                                   style: TextStyle(
                                       color: brandColor,
                                       fontSize: 14,

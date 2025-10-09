@@ -35,8 +35,11 @@ class ClientSearchScreen extends StatelessWidget {
           ),
         ),
         FilterTypeWidget(),
-        Obx(()=>
-                Text("${clientSearchController.items.length}+ Results"),
+        Obx(
+          () => Text(
+            "${clientSearchController.items.length}+ Results",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          ),
         ),
         ActivityItemsWidget(),
       ],

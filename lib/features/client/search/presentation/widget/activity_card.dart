@@ -28,8 +28,6 @@ class ActivityCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          // Handle card tap
-          // print('Tapped on $title');
         },
         borderRadius: BorderRadius.circular(16),
         child: SizedBox(
@@ -123,6 +121,8 @@ class ActivityCard extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(16),
+                    bottomLeft: Radius.circular(16),
+                    topLeft: Radius.circular(16),
                     bottomRight: Radius.circular(16),
                   ),
                   child: Image.network(
