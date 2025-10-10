@@ -37,7 +37,7 @@ class ActivityCategory extends StatelessWidget {
                           homeController.updateSelectedCategory(index);
                         },
                         child: Text(
-                          item.category,
+                          item.category.toLowerCase().tr,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: white,
@@ -60,7 +60,8 @@ class ActivityCategory extends StatelessWidget {
                         homeController.updateSelectedCategory(index);
                       },
                       child: Text(
-                        item.category,
+                        // item.category,
+                        item.category.toLowerCase().tr,
                         style:
                             TextStyle(fontWeight: FontWeight.bold, color: grey),
                       ),
@@ -117,7 +118,7 @@ class ActivityCategory extends StatelessWidget {
                             text: TextSpan(children: [
                               TextSpan(
                                   text:
-                                      "${activityCategoryEntity.city} . ${activityCategoryEntity.rate}",
+                                      "${activityCategoryEntity.city.toLowerCase().tr.capitalize} . ${activityCategoryEntity.rate}",
                                   style: TextStyle(
                                       color: brandColor,
                                       fontSize: 14,
@@ -174,7 +175,7 @@ class ActivityCategory extends StatelessWidget {
                           text: TextSpan(children: [
                             TextSpan(
                                 text:
-                                    "${activityCategoryEntity.city} . ${activityCategoryEntity.rate}",
+                                    "${activityCategoryEntity.city.toLowerCase().tr.capitalize} . ${activityCategoryEntity.rate}",
                                 style: TextStyle(
                                     color: brandColor,
                                     fontSize: 14,

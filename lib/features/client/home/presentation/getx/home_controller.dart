@@ -109,7 +109,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=500',
         title: 'Scuba Diving',
-        city: 'Maldives',
+        city: 'fes',
         rate: 4.9,
         price: 180.0,
       ),
@@ -117,7 +117,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1551632811-561732d1e306?w=500',
         title: 'Helicopter Tour',
-        city: 'Dubai',
+        city: 'maknes',
         rate: 4.8,
         price: 350.0,
       ),
@@ -125,7 +125,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1483097365279-e8acd3bf9f18?w=500',
         title: 'Wine Tasting Tour',
-        city: 'Tuscany',
+        city: 'casablanca',
         rate: 4.7,
         price: 95.0,
       ),
@@ -133,7 +133,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500',
         title: 'Zip Lining Adventure',
-        city: 'Costa Rica',
+        city: 'beni_melal',
         rate: 4.8,
         price: 75.0,
       ),
@@ -141,7 +141,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500',
         title: 'Kayaking Experience',
-        city: 'Norway',
+        city: 'marrakech',
         rate: 4.6,
         price: 60.0,
       ),
@@ -149,7 +149,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=500',
         title: 'Sahara Desert Safari',
-        city: 'Merzouga',
+        city: 'marrakech',
         rate: 4.9,
         price: 150.0,
       ),
@@ -157,7 +157,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500',
         title: 'Atlas Mountain Trekking',
-        city: 'Imlil',
+        city: 'tetouan',
         rate: 4.7,
         price: 80.0,
       ),
@@ -165,7 +165,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500',
         title: 'Quad Biking Adventure',
-        city: 'Marrakech',
+        city: 'marrakech',
         rate: 4.6,
         price: 65.0,
       ),
@@ -173,7 +173,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500',
         title: 'Hot Air Balloon Ride',
-        city: 'Marrakech',
+        city: 'marrakech',
         rate: 4.9,
         price: 200.0,
       ),
@@ -181,7 +181,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500',
         title: 'Surfing Lessons',
-        city: 'Essaouira',
+        city: 'casablanca',
         rate: 4.5,
         price: 45.0,
       ),
@@ -189,7 +189,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=500',
         title: 'Cooking Class Experience',
-        city: 'Fes',
+        city: 'fes',
         rate: 4.8,
         price: 55.0,
       ),
@@ -197,7 +197,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=500',
         title: 'Camel Trekking Tour',
-        city: 'Agafay Desert',
+        city: 'el_jadida',
         rate: 4.7,
         price: 90.0,
       ),
@@ -205,7 +205,7 @@ class HomeController extends GetxController {
         imageUrl:
             'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500',
         title: 'Paragliding Experience',
-        city: 'Agadir',
+        city: 'agadir',
         rate: 4.8,
         price: 120.0,
       ),
