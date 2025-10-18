@@ -17,7 +17,7 @@ class PastTripsView extends StatelessWidget {
               Icon(Icons.history, size: 64, color: Colors.grey.shade400),
               SizedBox(height: 16),
               Text(
-                'No past trips',
+                "no_upcoming".tr,
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.grey.shade600,

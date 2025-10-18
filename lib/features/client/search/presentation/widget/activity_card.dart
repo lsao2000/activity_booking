@@ -27,11 +27,10 @@ class ActivityCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       child: InkWell(
-        onTap: () {
-        },
+        onTap: () {},
         borderRadius: BorderRadius.circular(16),
         child: SizedBox(
-          height: Get.height*0.24,
+          height: Get.height * 0.24,
           child: Row(
             children: [
               // Left side - Content
@@ -60,7 +59,7 @@ class ActivityCard extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            ' · $reviews reviews',
+                            ' · $reviews ${"reviews".tr}',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey.shade600,

@@ -29,7 +29,7 @@ class FilterTypeWidget extends StatelessWidget {
                 clientSearchController.changeSortingType(0);
               },
               label: Text(
-                "Date",
+                "date".tr,
                 style: TextStyle(
                     color: clientSearchController.selectedSortingType[0]
                         ? white
@@ -54,7 +54,7 @@ class FilterTypeWidget extends StatelessWidget {
                 clientSearchController.changeSortingType(1);
               },
               label: Text(
-                "Price range",
+                "price_range".tr,
                 style: TextStyle(
                     color: clientSearchController.selectedSortingType[1]
                         ? white
@@ -79,7 +79,7 @@ class FilterTypeWidget extends StatelessWidget {
                 clientSearchController.changeSortingType(2);
               },
               label: Text(
-                "Rating",
+                "rating".tr,
                 style: TextStyle(
                     color: clientSearchController.selectedSortingType[2]
                         ? white
@@ -99,7 +99,7 @@ class FilterTypeWidget extends StatelessWidget {
               ),
               onPressed: () {},
               label: Text(
-                "Filter",
+                "filter".tr,
                 style: TextStyle(color: grey),
               ),
               icon: Icon(

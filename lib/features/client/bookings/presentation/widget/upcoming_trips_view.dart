@@ -17,7 +17,7 @@ class UpcomingTripsView extends StatelessWidget {
               Icon(Icons.event_busy, size: 64, color: Colors.grey.shade400),
               SizedBox(height: 16),
               Text(
-                'No upcoming trips',
+                "no_past".tr,
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.grey.shade600,

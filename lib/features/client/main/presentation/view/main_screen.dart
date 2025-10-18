@@ -3,7 +3,9 @@ import 'package:activity_booking/core/utils/themes/core_styles.dart';
 import 'package:activity_booking/features/client/bookings/presentation/view/booking_screen.dart';
 import 'package:activity_booking/features/client/home/presentation/view/client_home_screen.dart';
 import 'package:activity_booking/features/client/main/presentation/getx/main_controller.dart';
+import 'package:activity_booking/features/client/map/presentation/view/map_screen.dart';
 import 'package:activity_booking/features/client/search/presentation/view/client_search_screen.dart';
+import 'package:activity_booking/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -49,27 +51,50 @@ class MainScreen extends StatelessWidget {
               children: [
                 ClientHomeScreen(),
                 BookingScreen(),
-                ClientSearchScreen()
+                ClientSearchScreen(),
+                MapScreen(),
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
                 selectedItemColor: brandColor,
-                unselectedItemColor: unselectedItem,
+                // unselectedItemColor: unselectedItem,
+                unselectedItemColor: grey,
                 currentIndex: mainController.selectedIndex.value,
                 onTap: mainController.changeIndex,
-                unselectedLabelStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-                selectedLabelStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
+                showSelectedLabels: true,
+                showUnselectedLabels: true,
+                // unselectedLabelStyle: TextStyle(color: grey,
+                // fontWeight: FontWeight.bold),
+                // selectedLabelStyle: TextStyle(
+                //   fontWeight: FontWeight.bold,
+                // ),
                 items: [
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.home,weight: 2,), label: "Home"),
+                    icon: Icon(
+                      Icons.home,
+                    ),
+                    label: "Home",
+                  ),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.calendar_month), label: "Booking"),
+                      icon: Icon(
+                        Icons.calendar_month,
+                      ),
+                      label: "Booking"),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.search,weight: 5,), label: "Search"),
+                      icon: Icon(
+                        Icons.search,
+                      ),
+                      label: "Search"),
+                  BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.search,
+                      ),
+                      label: "Map"),
+                  BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.person,
+                      ),
+                      label: "Profile"),
                 ]),
           ),
         ),

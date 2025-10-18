@@ -37,7 +37,7 @@ class ClientSearchScreen extends StatelessWidget {
         FilterTypeWidget(),
         Obx(
           () => Text(
-            "${clientSearchController.items.length}+ Results",
+            "${clientSearchController.items.length}+ ${'results'.tr}",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
         ),

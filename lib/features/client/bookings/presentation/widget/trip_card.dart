@@ -55,7 +55,7 @@ class TripCard extends StatelessWidget {
                   ),
                   SizedBox(height: 6),
                   Text(
-                    'Total: \$${trip.totalPrice}',
+                    "${'total'.tr}${trip.totalPrice}",
                     style: TextStyle(
                       color: Colors.grey.shade700,
                       fontSize: 14,
@@ -87,7 +87,7 @@ class TripCard extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 8),
               ),
               child: Text(
-                'View Details',
+                'view_detail'.tr,
                 style: TextStyle(fontSize: 13),
               ),
             ),

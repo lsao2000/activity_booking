@@ -29,18 +29,15 @@ class BookingScreen extends StatelessWidget {
             indicatorColor: Colors.black,
             indicatorWeight: 2.5,
             tabs: [
-              Tab(text: 'Upcoming'),
-              Tab(text: 'Past'),
+              Tab(text: 'upcoming'.tr),
+              Tab(text: 'past'.tr),
             ],
           ),
         ),
         Expanded(
           child: TabBarView(
             controller: controller.tabController,
-            children: [
-              UpcomingTripsView(),
-              PastTripsView()
-            ],
+            children: [UpcomingTripsView(), PastTripsView()],
           ),
         ),
       ],
