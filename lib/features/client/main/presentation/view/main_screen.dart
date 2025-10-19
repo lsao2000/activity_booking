@@ -5,7 +5,6 @@ import 'package:activity_booking/features/client/home/presentation/view/client_h
 import 'package:activity_booking/features/client/main/presentation/getx/main_controller.dart';
 import 'package:activity_booking/features/client/map/presentation/view/map_screen.dart';
 import 'package:activity_booking/features/client/search/presentation/view/client_search_screen.dart';
-import 'package:activity_booking/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -87,7 +86,7 @@ class MainScreen extends StatelessWidget {
                       label: "Search"),
                   BottomNavigationBarItem(
                       icon: Icon(
-                        Icons.search,
+                        Icons.location_on,
                       ),
                       label: "Map"),
                   BottomNavigationBarItem(
