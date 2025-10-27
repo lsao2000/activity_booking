@@ -3,17 +3,30 @@ import 'package:activity_booking/features/client/map/presentation/getx/map_contr
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:latlong2/latlong.dart';
 
 class MapScreen extends StatelessWidget {
   MapScreen({super.key});
-  MapController mapController = Get.put(MapController());
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  MapScreenController mapScreenController = Get.put(MapScreenController());
+  final MapController mapController = MapController();
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        SizedBox(
+            width: Get.width,
+            height: Get.height,
+            child: FlutterMap(
+              mapController: MapController(),
+              options: MapOptions(),
+              children: [],
+            )
+            // FlutterMap(
+            //   options: MapOptions(),
+            //   children: [],
+            // ),
+            ),
         Positioned(
           left: Get.width * 0.06,
           right: Get.width * 0.06,
@@ -40,7 +53,7 @@ class MapScreen extends StatelessWidget {
                       // Obx(
                       //   () =>
                       TextField(
-                    controller: mapController.searchController,
+                    // controller: mapController.searchController,
                     onTap: () {
                       debugPrint("show search");
                     },
@@ -90,17 +103,6 @@ class MapScreen extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
-            width: Get.width,
-            height: Get.height,
-            child: FlutterMap(
-            // mapController: ,
-            children: [
-            ])
-            // GoogleMap(
-            //     initialCameraPosition:
-            //         CameraPosition(target: _center, zoom: 11.0)),
-            )
       ],
     );
   }
