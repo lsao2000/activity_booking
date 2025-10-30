@@ -69,31 +69,6 @@ class MapScreenController extends GetxController {
       // _showSnackBar('Error getting location: $e');
     }
   }
-  // void _showSnackBar(String message) {
-  //   ScaffoldMessenger.of(context).showSnackBar(
-  //     SnackBar(content: Text(message), duration: Duration(seconds: 2)),
-  //   );
-  // }
-  // void _clearMarkers() {
-  //   setState(() {
-  //     markers.clear();
-  //   });
-  //   _showSnackBar('All markers cleared');
-  // }
-  // void _addMarkerOnTap(LatLng point) {
-  //   setState(() {
-  //     markers.add(
-  //       Marker(
-  //         point: point,
-  //         builder: (ctx) => Icon(
-  //           Icons.push_pin,
-  //           color: Colors.orange,
-  //           size: 30,
-  //         ),
-  //       ),
-  //     );
-  //   });
-  // }
   // Future<void> searchAdress()async{
   //   String query = searchController.text.trim();
   //   if (query.isEmpty) {

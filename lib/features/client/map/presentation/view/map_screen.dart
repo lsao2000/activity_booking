@@ -19,14 +19,47 @@ class MapScreen extends StatelessWidget {
             height: Get.height,
             child: FlutterMap(
               mapController: MapController(),
-              options: MapOptions(),
-              children: [],
-            )
-            // FlutterMap(
-            //   options: MapOptions(),
-            //   children: [],
-            // ),
-            ),
+
+              // options: MapOptions(),
+              options: MapOptions(
+                initialCenter: const LatLng(33.583760, -7.648748),
+                initialZoom: 15,
+              ),
+              children: [
+                TileLayer(
+                  // URL template for map tiles
+                  // {z} = zoom level, {x} = tile X coordinate, {y} = tile Y coordinate
+                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+
+                  // Required: Identify your app (OpenStreetMap policy)
+                  userAgentPackageName: 'com.example.app',
+
+                  // Optional: Additional settings
+                  // maxZoom: 18,
+                  // tileProvider: NetworkTileProvider(), // Default
+                ),
+                // TileLayer(
+                //   urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                //   userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+                //   // + many other options
+                // ),
+                // TileLayer(
+                //   urlTemplate:
+                //       'https://{s}.google.com/vt/lyrs=m,h&x={x}&y={y}&z={z}&hl=ar-MA&gl=MA',
+                //   subdomains: const ['mt0', 'mt1', 'mt2', 'mt3'],
+                //   userAgentPackageName: 'com.example.app',
+                // ),
+                const RichAttributionWidget(
+                  attributions: [
+                    TextSourceAttribution(
+                      'OpenStreetMap contributors',
+                      // onTap: () =>
+                      // launchUrl(Uri.parse('https://openstreetmap.org/copyright')),
+                    ),
+                  ],
+                ),
+              ],
+            )),
         Positioned(
           left: Get.width * 0.06,
           right: Get.width * 0.06,
