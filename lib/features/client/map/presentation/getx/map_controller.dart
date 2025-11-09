@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
-// import 'package:activity_booking/core/color.dart';
-// import 'package:activity_booking/features/client/map/presentation/getx/map_controller.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_map/flutter_map.dart';
-// import 'package:get/get.dart';
-// import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
-// import 'package:geocoding/geocoding.dart';
 
 class MapScreenController extends GetxController {
   final TextEditingController searchController = TextEditingController();
@@ -19,17 +12,18 @@ class MapScreenController extends GetxController {
   List<Marker> markers = [];
 
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
-    _addMarker();
+    await getUserLocation();
+    // _addMarker();
   }
 
-  Future<void> _getUserLocation() async {
+  Future<void> getUserLocation() async {
     try {
       // Check if location services are enabled
       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
-        // _showSnackBar('Location services are disabled');
+        debugPrint("Location services are disabled");
         return;
       }
 
@@ -38,7 +32,7 @@ class MapScreenController extends GetxController {
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
         if (permission == LocationPermission.denied) {
-          // _showSnackBar('Location permission denied');
+          debugPrint('Location permission denied');
           return;
         }
       }
@@ -47,21 +41,18 @@ class MapScreenController extends GetxController {
       Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
       );
-
       // Update map center and add marker
-      // setState(() {
       currentCenter = LatLng(position.latitude, position.longitude);
       markers.add(
         Marker(
           point: currentCenter,
           child: Icon(
-            Icons.my_location,
-            color: Colors.blue,
-            size: 40,
+            Icons.location_on,
+            color: Colors.green,
+            size: 30,
           ),
         ),
       );
-      // });
       // Move map to user location with animation
       mapController.move(currentCenter, 15.0);
       // _showSnackBar('Location found!');
@@ -69,6 +60,22 @@ class MapScreenController extends GetxController {
       // _showSnackBar('Error getting location: $e');
     }
   }
+
+  void addMarker() {
+    markers.add(
+      Marker(
+        child: Icon(
+          Icons.location_on,
+          color: Colors.red,
+          size: 40,
+        ),
+        point: currentLocation,
+        width: 80,
+        height: 80,
+      ),
+    );
+  }
+}
   // Future<void> searchAdress()async{
   //   String query = searchController.text.trim();
   //   if (query.isEmpty) {
@@ -121,18 +128,3 @@ class MapScreenController extends GetxController {
   //   }
   // }
 
-  void _addMarker() {
-    markers.add(
-      Marker(
-        child: Icon(
-          Icons.location_on,
-          color: Colors.red,
-          size: 40,
-        ),
-        point: currentLocation,
-        width: 80,
-        height: 80,
-      ),
-    );
-  }
-}
