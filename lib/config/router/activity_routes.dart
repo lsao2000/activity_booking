@@ -7,6 +7,8 @@ import 'package:activity_booking/features/auth/sign_up/presentation/view/client_
 import 'package:activity_booking/features/auth/verification_type/presentation/view/verfication_type_screen.dart';
 import 'package:activity_booking/features/client/home/presentation/view/client_home_screen.dart';
 import 'package:activity_booking/features/client/main/presentation/view/main_screen.dart';
+import 'package:activity_booking/features/client/map/presentation/view/filter_map_screen.dart';
+import 'package:activity_booking/features/client/map/presentation/view/map_search_screen.dart';
 import 'package:get/get.dart';
 
 class ActivityRoutes {
@@ -17,9 +19,13 @@ class ActivityRoutes {
     GetPage(name: "/signup_admin", page: () => AdminSignupScreen()),
     GetPage(
         name: VerficationTypeScreen.route, page: () => VerficationTypeScreen()),
-    GetPage(name: OtpScreen.route, page: () => OtpScreen()),
-    GetPage(name: ClientHomeScreen.route, page: () => ClientHomeScreen()),
-    GetPage(name: AdminHomeScreen.route, page: () => AdminHomeScreen()),
+
     GetPage(name: MainScreen.route, page: () => MainScreen()),
+    GetPage(name: ClientHomeScreen.route, page: () => ClientHomeScreen()),
+    GetPage(name: OtpScreen.route, page: () => OtpScreen()),
+    GetPage(name: MapSearchScreen.route, page: () => MapSearchScreen()),
+    GetPage(name: FilterMapScreen.route, page: () => FilterMapScreen()),
+
+    GetPage(name: AdminHomeScreen.route, page: () => AdminHomeScreen()),
   ];
 }

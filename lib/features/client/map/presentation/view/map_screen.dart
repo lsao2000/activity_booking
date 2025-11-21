@@ -1,14 +1,15 @@
 import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/features/client/map/presentation/getx/map_controller.dart';
+import 'package:activity_booking/features/client/map/presentation/view/filter_map_screen.dart';
+import 'package:activity_booking/features/client/map/presentation/view/map_search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
-import 'package:latlong2/latlong.dart';
 
 class MapScreen extends StatelessWidget {
   MapScreen({super.key});
-  MapScreenController mapScreenController = Get.put(MapScreenController());
-
+  final MapScreenController mapScreenController =
+      Get.put(MapScreenController());
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -34,8 +35,10 @@ class MapScreen extends StatelessWidget {
                   urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                   userAgentPackageName: 'dev.fleaflet.flutter_map.example',
                 ),
-                MarkerLayer(markers: mapScreenController.markers,
-                rotate: true,),
+                MarkerLayer(
+                  markers: mapScreenController.markers,
+                  rotate: true,
+                ),
                 // TileLayer(
                 //   urlTemplate:
                 //       'https://{s}.google.com/vt/lyrs=m,h&x={x}&y={y}&z={z}&hl=ar-MA&gl=MA',
@@ -79,9 +82,10 @@ class MapScreen extends StatelessWidget {
                       // Obx(
                       //   () =>
                       TextField(
-                    // controller: mapController.searchController,
+                    controller: mapScreenController.searchController,
                     onTap: () {
-                      debugPrint("show search");
+                      // debugPrint("show search");
+                      Get.toNamed(MapSearchScreen.route);
                     },
                     decoration: InputDecoration(
                       hintText: 'Search for activities',
@@ -124,6 +128,7 @@ class MapScreen extends StatelessWidget {
                       backgroundColor: inputColor),
                   onPressed: () {
                     debugPrint("filter");
+                    Get.toNamed(FilterMapScreen.route);
                   },
                   icon: Icon(Icons.tune))
             ],

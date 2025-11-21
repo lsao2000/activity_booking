@@ -16,6 +16,8 @@ Color otpColor = Color(0xFFF5F2F2);
 Color black26 = Colors.black26;
 Color unselectedItem = Color(0xFF8C8C8C);
 
+Color userCity = Color(0xFF8C7D59);
+// 8C7D59
 // Color orange = Color.fromRGBO(
 //   23,
 //   20,

@@ -4,6 +4,7 @@ import 'package:activity_booking/features/client/bookings/presentation/view/book
 import 'package:activity_booking/features/client/home/presentation/view/client_home_screen.dart';
 import 'package:activity_booking/features/client/main/presentation/getx/main_controller.dart';
 import 'package:activity_booking/features/client/map/presentation/view/map_screen.dart';
+import 'package:activity_booking/features/client/profile/presentation/view/client_profile_screen.dart';
 import 'package:activity_booking/features/client/search/presentation/view/client_search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,6 +53,7 @@ class MainScreen extends StatelessWidget {
                 BookingScreen(),
                 ClientSearchScreen(),
                 MapScreen(),
+                ClientProfileScreen(),
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
