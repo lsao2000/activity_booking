@@ -17,6 +17,7 @@ Color black26 = Colors.black26;
 Color unselectedItem = Color(0xFF8C8C8C);
 
 Color userCity = Color(0xFF8C7D59);
+Color btnEditProfile = Color(0xFFF2EDE8);
 // 8C7D59
 // Color orange = Color.fromRGBO(
 //   23,
