@@ -20,7 +20,8 @@ class ClientHomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(left: 15),
+              // padding: EdgeInsets.only(left: 15),
+              padding: EdgeInsets.only(left: 15, right: 15),
               child: Text(
                 "${'user_greeting'.tr}, Lahcen!",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
@@ -38,9 +39,9 @@ class ClientHomeScreen extends StatelessWidget {
               height: Get.height * 0.04,
             ),
             Container(
-              padding: EdgeInsets.only(left: 15),
+              padding: EdgeInsets.only(left: 15, right: 15),
               child: Text(
-                "For You",
+                "for_you".tr,
                 style: TextStyle(
                     fontWeight: FontWeight.bold, fontSize: 20, color: black),
               ),

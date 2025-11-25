@@ -1,4 +1,9 @@
 import 'package:activity_booking/core/color.dart';
+import 'package:activity_booking/features/client/favorites/presentation/view/client_favorite_screen.dart';
+import 'package:activity_booking/features/client/payment/presentation/view/client_payment_screen.dart';
+import 'package:activity_booking/features/client/profile/presentation/view/client_edit_profile.dart';
+import 'package:activity_booking/features/client/settings/presentation/view/client_settings_screen.dart';
+import 'package:activity_booking/features/client/support/presentation/view/client_support_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -31,7 +36,7 @@ class ClientProfileScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               Text(
-                "Rabat, Morocco",
+                "${"rabat".tr}, ${"morocco".tr}",
                 style: TextStyle(
                     fontSize: 12, fontWeight: FontWeight.w400, color: userCity),
               ),
@@ -42,14 +47,17 @@ class ClientProfileScreen extends StatelessWidget {
                 width: Get.width * 0.9,
                 height: Get.height * 0.05,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    debugPrint("clicked");
+                    Get.toNamed(ClientEditProfile.route);
+                  },
                   style: ElevatedButton.styleFrom(
                       elevation: 0,
                       backgroundColor: btnEditProfile,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                   child: Text(
-                    "Edit profile",
+                    "edit_profile".tr,
                     style: TextStyle(color: black, fontWeight: FontWeight.w500),
                   ),
                 ),
@@ -84,7 +92,7 @@ class ClientProfileScreen extends StatelessWidget {
                         SizedBox(
                           height: 6,
                         ),
-                        Text("Bookings"),
+                        Text("bookings".tr),
                       ],
                     ),
                   ),
@@ -110,7 +118,7 @@ class ClientProfileScreen extends StatelessWidget {
                         SizedBox(
                           height: 6,
                         ),
-                        Text("Favorites"),
+                        Text("favorites".tr),
                       ],
                     ),
                   ),
@@ -136,7 +144,7 @@ class ClientProfileScreen extends StatelessWidget {
                         SizedBox(
                           height: 6,
                         ),
-                        Text("Reviews"),
+                        Text("reviews".tr),
                       ],
                     ),
                   ),
@@ -158,7 +166,7 @@ class ClientProfileScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    "Account",
+                    "account".tr,
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         color: black,
@@ -179,7 +187,7 @@ class ClientProfileScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Email",
+                            "email".tr,
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w500),
                           ),
@@ -205,7 +213,7 @@ class ClientProfileScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Phone Number",
+                            "phone_number".tr,
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w500),
                           ),
@@ -221,7 +229,7 @@ class ClientProfileScreen extends StatelessWidget {
                     height: 30,
                   ),
                   Text(
-                    "Quick Links",
+                    "quick_links".tr,
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         color: black,
@@ -232,7 +240,10 @@ class ClientProfileScreen extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      debugPrint("payment");
+                      Get.toNamed(ClientPaymentScreen.route);
+                    },
                     child: Container(
                       height: Get.height * 0.06,
                       child: Row(
@@ -242,7 +253,7 @@ class ClientProfileScreen extends StatelessWidget {
                             'assets/icons/payment.svg',
                           ),
                           Text(
-                            "Payment Methods",
+                            "payment_methods".tr,
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w500),
                           ),
@@ -254,7 +265,10 @@ class ClientProfileScreen extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      debugPrint("support");
+                      Get.toNamed(ClientSupportScreen.route);
+                    },
                     child: Container(
                       height: Get.height * 0.06,
                       child: Row(
@@ -265,7 +279,7 @@ class ClientProfileScreen extends StatelessWidget {
                           ),
                           // Icon(Icons.email_outlined,size: 30,),
                           Text(
-                            "Support",
+                            "support".tr,
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w500),
                           ),
@@ -277,7 +291,10 @@ class ClientProfileScreen extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        debugPrint("setting");
+                        Get.toNamed(ClientSettingsScreen.route);
+                      },
                       child: Container(
                         height: Get.height * 0.06,
                         child: Row(
@@ -288,7 +305,7 @@ class ClientProfileScreen extends StatelessWidget {
                             ),
                             // Icon(Icons.email_outlined,size: 30,),
                             Text(
-                              "Settings",
+                              "settings".tr,
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.w500),
                             ),
@@ -299,8 +316,11 @@ class ClientProfileScreen extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                      onTap: () {},
-                      child: Container(
+                      onTap: () {
+                        debugPrint("favorite");
+                        Get.toNamed(ClientFavoriteScreen.route);
+                      },
+                      child: SizedBox(
                         height: Get.height * 0.06,
                         child: Row(
                           spacing: 20,
@@ -310,7 +330,7 @@ class ClientProfileScreen extends StatelessWidget {
                             ),
                             // Icon(Icons.email_outlined,size: 30,),
                             Text(
-                              "Favorites",
+                              "favorites".tr,
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.w500),
                             ),
@@ -321,7 +341,9 @@ class ClientProfileScreen extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      debugPrint("logout");
+                    },
                     child: Container(
                       height: Get.height * 0.06,
                       child: Row(
@@ -332,7 +354,7 @@ class ClientProfileScreen extends StatelessWidget {
                           ),
                           // Icon(Icons.email_outlined,size: 30,),
                           Text(
-                            "Logout",
+                            "logout".tr,
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w500),
                           ),

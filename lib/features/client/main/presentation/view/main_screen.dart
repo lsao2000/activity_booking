@@ -74,28 +74,28 @@ class MainScreen extends StatelessWidget {
                     icon: Icon(
                       Icons.home,
                     ),
-                    label: "Home",
+                    label: "home".tr,
                   ),
                   BottomNavigationBarItem(
                       icon: Icon(
                         Icons.calendar_month,
                       ),
-                      label: "Booking"),
+                      label: "booking".tr),
                   BottomNavigationBarItem(
                       icon: Icon(
                         Icons.search,
                       ),
-                      label: "Search"),
+                      label: "search".tr),
                   BottomNavigationBarItem(
                       icon: Icon(
                         Icons.location_on,
                       ),
-                      label: "Map"),
+                      label: "map".tr),
                   BottomNavigationBarItem(
                       icon: Icon(
                         Icons.person,
                       ),
-                      label: "Profile"),
+                      label: "profile".tr),
                 ]),
           ),
         ),

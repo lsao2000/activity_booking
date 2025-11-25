@@ -8,9 +8,10 @@ class OverviewImagesActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: Get.height * 0.23,
       width: Get.width,
+      // padding: EdgeInsets.symmetric(horizontal: 15),
       child: ListView.builder(
           itemCount: homeController.lstItems.length,
           scrollDirection: Axis.horizontal,
@@ -30,7 +31,9 @@ class OverviewImagesActivity extends StatelessWidget {
               );
             }
             return Container(
-              padding: EdgeInsets.only(left: 15),
+              padding: Get.locale?.languageCode == "ar"
+                  ? EdgeInsets.only(right: 15)
+                  : EdgeInsets.only(left: 15),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.network(

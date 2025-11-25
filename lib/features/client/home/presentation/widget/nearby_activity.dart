@@ -1,7 +1,7 @@
 import 'package:activity_booking/core/color.dart';
 import 'package:activity_booking/features/client/home/domain/entities/nearby_category_entity.dart';
 import 'package:activity_booking/features/client/home/presentation/getx/home_controller.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+// import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -108,7 +108,9 @@ class NearbyActivity extends StatelessWidget {
                     );
                   }
                   return Container(
-                    padding: EdgeInsets.only(left: 15),
+              padding: Get.locale?.languageCode == "ar"
+                  ? EdgeInsets.only(right: 15)
+                  : EdgeInsets.only(left: 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,

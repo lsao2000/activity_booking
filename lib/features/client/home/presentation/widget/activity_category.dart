@@ -27,7 +27,10 @@ class ActivityCategory extends StatelessWidget {
                       alignment: Alignment.center,
                       margin: index + 1 == ActivityCategories.categories.length
                           ? EdgeInsets.only(left: 15, right: 15)
-                          : EdgeInsets.only(left: 15),
+                          : Get.locale?.languageCode == "ar"
+                              ? EdgeInsets.only(right: 15)
+                              : EdgeInsets.only(left: 15),
+                      // EdgeInsets.only(left: 15),
                       child: TextButton(
                         style: TextButton.styleFrom(
                             backgroundColor: brandColor,
@@ -50,7 +53,11 @@ class ActivityCategory extends StatelessWidget {
                     alignment: Alignment.center,
                     margin: index + 1 == ActivityCategories.categories.length
                         ? EdgeInsets.only(left: 15, right: 15)
-                        : EdgeInsets.only(left: 15),
+                        : Get.locale?.languageCode == "ar"
+                            ? EdgeInsets.only(right: 15)
+                            : EdgeInsets.only(left: 15),
+
+                    // EdgeInsets.only(left: 15),
                     child: TextButton(
                       style: TextButton.styleFrom(
                           backgroundColor: black26.withAlpha(20),
@@ -143,7 +150,10 @@ class ActivityCategory extends StatelessWidget {
                     );
                   }
                   return Container(
-                    padding: EdgeInsets.only(left: 15),
+                    padding: Get.locale?.languageCode == "ar"
+                        ? EdgeInsets.only(right: 15)
+                        : EdgeInsets.only(left: 15),
+                    // EdgeInsets.only(left: 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
